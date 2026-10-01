@@ -1,0 +1,19 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check required files
+        run: |
+          test -f index.html
+          test -f assets/css/main.css
+          test -f assets/js/app.js
+          test -f prompts/usage-tracker-setup.md
+      - name: Validate JSON
+        run: python -m json.tool data/portfolio.json >/dev/null
