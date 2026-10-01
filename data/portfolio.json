@@ -1,0 +1,19 @@
+{
+  "name": "FedPromptly × Muse by Meta",
+  "tagline": "Make Muse workflow activity observable.",
+  "description": "An independent HTML field guide and usage-audit companion for Muse by Meta workflows.",
+  "scope": "Muse by Meta usage auditing",
+  "disclaimer": "This project does not claim access to private Meta telemetry and is not a Meta product.",
+  "contact": "contact@fedpromptly.com",
+  "links": {
+    "website": "https://fedpromptly.com",
+    "ecosystem": "https://www.fedpromptly.org",
+    "github": "https://github.com/FED-OS"
+  },
+  "principles": [
+    "Measure Muse actions before optimizing them",
+    "Separate facts from estimates",
+    "Minimize retained private data",
+    "Never imply access to telemetry you cannot observe"
+  ]
+}
