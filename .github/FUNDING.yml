@@ -1,0 +1,40 @@
+# GitHub Sponsors / funding configuration
+# Docs: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository
+#
+# Funding options for this repository
+#
+# Fed-Poster is a free, open-source, MIT-licensed project with no venture
+# funding and no in-app telemetry. Maintenance, new platform integrations,
+# and theme design are funded by the community. If Fed-Poster saves you
+# time, consider supporting one of the channels below. Thank you! 🧡
+
+# GitHub Sponsors (organisation or user)
+github: [FED-OS]                 # https://github.com/sponsors/FED-OS
+
+# Primary community tip jar
+ko_fi: fedpromptly               # https://ko-fi.com/fedpromptly
+
+# Patreon
+patreon: fedpromptly             # https://www.patreon.com/cw/fedpromptly
+
+# Buy Me a Coffee
+buy_me_a_coffee: fedpromptly     # https://buymeacoffee.com/fedpromptly
+
+#Discord
+Discord: fedpromptly             # https://discord.gg/Jm4XStx4Pf
+
+# Other supported funding platforms — uncomment only if/when created
+# open_collective: fed-poster    # uncomment if an Open Collective is created
+# liberapay: fed-poster          # uncomment if a Liberapay is set up
+# issuehunt: fed-poster          # uncomment to enable IssueHunt bounties
+# lfx_crowdfunding: fed-poster   # uncomment for LFX Crowdfunding
+# community_bridge: fed-poster   # uncomment for Community Bridge
+# polar: fed-poster              # uncomment for Polar.sh issue funding
+# tidelift: npm/fed-poster       # uncomment for Tidelift, or use appropriate platform/package-name
+# thanks_dev: u/gh/fedpromptly   # verify exact thanks.dev format before enabling
+# otechie: fedposter             # uncomment if an Otechie account is created
+
+# Custom links (max 4; direct Ko-fi link omitted because ko_fi already covers it)
+custom:
+  - https://www.fedpromptly.com/aid
+  - https://discord.gg/Jm4XStx4Pf
