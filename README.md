@@ -1,5 +1,7 @@
 # FedPromptly × Muse by Meta
 
+<img width="1312" height="711" alt="Screenshot 2026-10-01 164727" src="https://github.com/user-attachments/assets/bb3d9546-ba67-4477-af2c-5094fe48bdcf" />
+
 A standalone, Muse-by-Meta-themed usage-audit companion for people who want to understand what Muse did during a multi-step task without pretending to have telemetry they cannot actually see.
 
 ## What this project is
