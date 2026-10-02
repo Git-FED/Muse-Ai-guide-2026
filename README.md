@@ -1,5 +1,7 @@
 # FedPromptly × Muse by Meta
 
+<img width="1312" height="711" alt="Screenshot 2026-10-01 164727" src="https://github.com/user-attachments/assets/bc683765-5a19-4fe9-9942-d37f41eef586" />
+
 A standalone, Muse-by-Meta-themed usage-audit companion for people who want to understand what Muse did during a multi-step task without pretending to have telemetry they cannot actually see.
 
 ## What this project is
@@ -23,6 +25,8 @@ The complete information layer is available through self-contained HTML files:
 
 Every HTML page embeds its own CSS and JavaScript, works with `file://`, includes responsive layout, animated reveal behavior, reduced-motion support, and the shared Muse-by-Meta visual system.
 
+<img width="1308" height="715" alt="Screenshot 2026-10-01 164820" src="https://github.com/user-attachments/assets/d635e2d1-def2-4230-b6d7-2f24ba18a0c7" />
+
 ## Open locally
 
 Double-click `index.html`, or serve the folder for local navigation testing:
@@ -32,6 +36,8 @@ python3 -m http.server 8080
 ```
 
 Then visit `http://localhost:8080`.
+
+<img width="1306" height="713" alt="Screenshot 2026-10-01 164901" src="https://github.com/user-attachments/assets/58a3e3e1-bc73-40d2-a60e-ad3e2f539825" />
 
 ## Muse audit principles
 
@@ -52,6 +58,7 @@ Deploy command: npx wrangler deploy --assets=.
 Root directory: /
 Production branch: main
 ```
+<img width="1299" height="719" alt="Screenshot 2026-10-01 165124" src="https://github.com/user-attachments/assets/896a4ae9-d76d-4702-90d2-43ba54197dab" />
 
 ## Scope and attribution
 
@@ -63,3 +70,5 @@ FedPromptly is an independent project themed for Muse by Meta. “Muse by Meta�
 - support@fedpromptly.com
 - contact@fedpromptly.com
 - business@fedpromptly.com
+
+<img width="1304" height="711" alt="Screenshot 2026-10-01 164953" src="https://github.com/user-attachments/assets/2b05b647-c7ce-46b8-80af-d3cad90824e7" />
