@@ -84,8 +84,9 @@ requireValue(electronBuilder.includes('build/tray-icon.png'), 'Electron builder 
 requireValue(electronBuilder.includes('extraResources:'), 'Electron runtime config must be an extra resource.');
 
 const electronConfig = await readJson('desktop/electron/resources/app.config.json');
-requireValue(electronConfig.startUrl === 'local', 'Electron must default to the offline local site.');
+requireValue(electronConfig.startUrl === 'https://muse.ai/', 'Electron must default to https://muse.ai/.');
 requireValue(Array.isArray(electronConfig.allowedHosts), 'Electron allowedHosts must be an explicit array.');
+requireValue(electronConfig.allowedHosts.includes('muse.ai'), 'Electron must allow muse.ai.');
 
 const tauriPackage = await readJson('desktop/tauri/package.json');
 requireValue(tauriPackage.scripts?.['generate:icons'], 'Tauri icon generation script is missing.');
@@ -96,6 +97,7 @@ requireValue(
   tauriConfig.build?.frontendDist === '../../../site',
   'Tauri must package the shared site directly from the repository root.'
 );
+requireValue(tauriConfig.build?.devUrl === 'https://muse.ai/', 'Tauri devUrl must be https://muse.ai/.');
 requireValue(
   Array.isArray(tauriConfig.bundle?.icon) && tauriConfig.bundle.icon.includes('icons/icon.icns'),
   'Tauri macOS bundle must reference the generated ICNS icon.'
@@ -117,6 +119,7 @@ const tauriMain = await readFile(path.join(root, 'desktop/tauri/src-tauri/src/ma
 requireValue(tauriMain.includes('.on_navigation('), 'Tauri must enforce its navigation policy.');
 requireValue(tauriMain.includes('.on_new_window('), 'Tauri must block popup windows.');
 requireValue(tauriMain.includes('NewWindowResponse::Deny'), 'Tauri popup requests must be denied.');
+requireValue(tauriMain.includes('https://muse.ai/'), 'Tauri must start at https://muse.ai/.');
 
 const workflow = await readFile(path.join(root, '.github/workflows/build-all.yml'), 'utf8');
 requireValue(workflow.includes('electron-windows:'), 'GitHub workflow lacks an Electron Windows build job.');
