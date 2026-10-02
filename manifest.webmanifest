@@ -1,0 +1,10 @@
+{
+  "name": "FedPromptly Muse Audit",
+  "short_name": "FedPromptly",
+  "start_url": "usage-audit.html",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "description": "A device-local ledger for observable Muse workflow usage.",
+  "icons": [{"src":"assets/images/favicon.svg","sizes":"any","type":"image/svg+xml"}]
+}

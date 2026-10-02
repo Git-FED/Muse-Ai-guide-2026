@@ -16,7 +16,7 @@ scripts/verify-desktop.mjs      # Structural validation used locally and in CI
 
 ## Windows — Electron
 
-The Electron shell loads a staged copy of `site/index.html` and produces a 64-bit NSIS installer.
+The Electron shell opens `https://muse.ai/` and produces a 64-bit NSIS installer. The staged `site/index.html` remains a packaged fallback.
 
 ```bash
 cd desktop/electron
@@ -25,13 +25,13 @@ npm run verify
 npm run dist
 ```
 
-The site is copied into `desktop/electron/site/` only as a build input and is ignored by Git. Electron has Node integration disabled, context isolation and sandboxing enabled, webview attachment disabled, and a deny-by-default permission policy. Internal navigation must remain beneath the bundled site directory; only `http:`, `https:`, and `mailto:` destinations are delegated to the system handler.
+The site is copied into `desktop/electron/site/` only as a build input and is ignored by Git. Electron has Node integration disabled, context isolation and sandboxing enabled, webview attachment disabled, and a deny-by-default permission policy. Navigation stays inside `muse.ai`/`www.muse.ai`; other `http:`, `https:`, and `mailto:` destinations are delegated to the system handler.
 
-The full Electron scaffold includes `resources/app.config.json` as an editable `extraResources` runtime file, app/installer/uninstaller/tray assets under `build/`, a single-instance lock, optional close-to-tray behavior, a URL security test, SBOM helper, signature verification template, `.env.example`, and `electron-builder.yml`. The default runtime is offline and local; remote start URLs require an explicit host allowlist.
+The full Electron scaffold includes `resources/app.config.json` as an editable `extraResources` runtime file, app/installer/uninstaller/tray assets under `build/`, a single-instance lock, optional close-to-tray behavior, a URL security test, SBOM helper, signature verification template, `.env.example`, and `electron-builder.yml`. The default runtime URL is `https://muse.ai/`, protected by an explicit host allowlist.
 
 ## macOS — Tauri
 
-The Tauri app uses `site/` directly as the frontend distribution and produces a `.app` bundle.
+The Tauri app uses `site/` directly as the frontend distribution fallback, opens `https://muse.ai/` at runtime, and produces a `.app` bundle.
 
 ```bash
 cd desktop/tauri

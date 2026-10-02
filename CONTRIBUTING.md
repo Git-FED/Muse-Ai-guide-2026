@@ -1,14 +1,6 @@
 # Contributing
 
-Keep `site/` as the canonical frontend source. Do not commit staged Electron site files, `node_modules`, Rust `target`, signing certificates, credentials, cookies, or build artifacts.
-
-Before opening a change, run:
-
-```bash
-node scripts/verify-desktop.mjs
-cd desktop/electron && npm ci && npm run verify
-cd ../tauri && npm ci && npm run verify
-cd src-tauri && cargo fmt --all -- --check && cargo test --locked
-```
-
-Changes that add network access, account handling, native permissions, updater behavior, crash reporting, or external URL hosts must include updated security/privacy documentation and a focused test. Unsigned CI artifacts are for testing only.
+1. Open an issue for substantial changes.
+2. Keep changes focused and accessible.
+3. Run the validation steps in BUILD.md.
+4. Explain any data, privacy, or payment impact in the pull request.
