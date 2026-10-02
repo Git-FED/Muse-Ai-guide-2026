@@ -1,0 +1,2 @@
+/* Backwards-compatible entry point. The production stylesheet lives at assets/css/main.css. */
+@import url("assets/css/main.css");
