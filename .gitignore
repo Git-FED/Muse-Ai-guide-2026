@@ -1,0 +1,36 @@
+# OS and editor state
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Node and desktop build output
+desktop/electron/node_modules/
+desktop/electron/site/
+desktop/electron/dist/
+desktop/tauri/node_modules/
+desktop/tauri/src-tauri/target/
+
+# Android build output and local machine state
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+*.apk
+*.aab
+
+# Runtime and private data
+.agent_hooks/local/
+.browser_data/local/
+.psiphon_data/local/
+.screenshots/local/
+*.har
+*.log
+.env
+.env.*
+!.env.example
+certs/*
+!certs/.gitkeep
+desktop/electron/SBOM.json
+signed-artifacts-manifest.json
+release-artifacts/
