@@ -33,3 +33,9 @@ The project includes density-specific legacy launcher PNGs, Android 8+ adaptive 
 ## GitHub Actions
 
 The Android CI workflow is at `.github/workflows/build-android.yml`. It runs on pushes to `main` or `master`, pull requests, and manual workflow dispatches. It checks out the project, configures Java 17 and Gradle, restores the executable bit on `gradlew`, assembles the debug APK, and uploads `app-debug.apk` as a workflow artifact.
+
+## Publish the APK to GitHub Packages
+
+The Maven publish workflow is at `.github/workflows/publish-android-package.yml`. It publishes the debug APK as the Maven package `com.fedpromptly:muse-audit` to the GitHub Packages registry for the current repository.
+
+To trigger it manually, push this project to GitHub, open **Actions**, choose **Publish Android Package**, click **Run workflow**, enter a version such as `1.0.0`, and run it. To trigger it from a tag instead, run `git tag v1.0.0` followed by `git push origin v1.0.0`. The workflow uses the built-in `GITHUB_TOKEN` with `packages: write`; no personal token is required.

@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'maven-publish'
 }
 
 android {
@@ -19,6 +20,39 @@ android {
             minifyEnabled false
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+def githubRepository = System.getenv('GITHUB_REPOSITORY') ?: 'owner/repository'
+
+publishing {
+    publications {
+        github(MavenPublication) {
+            groupId = 'com.fedpromptly'
+            artifactId = 'muse-audit'
+            version = findProperty('packageVersion') ?: android.defaultConfig.versionName
+
+            artifact("$buildDir/outputs/apk/debug/app-debug.apk") {
+                extension = 'apk'
+            }
+
+            pom {
+                name = 'FedPromptly Muse Audit'
+                description = 'Offline Android app for the FedPromptly Muse usage-audit companion.'
+                url = 'https://github.com/' + githubRepository
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            name = 'GitHubPackages'
+            url = uri("https://maven.pkg.github.com/$githubRepository")
+            credentials {
+                username = System.getenv('GITHUB_ACTOR')
+                password = System.getenv('GITHUB_TOKEN')
+            }
         }
     }
 }
