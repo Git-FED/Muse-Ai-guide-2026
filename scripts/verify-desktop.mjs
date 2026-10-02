@@ -63,7 +63,6 @@ for (const file of [
   'desktop/tauri/src-tauri/Cargo.toml',
   'desktop/tauri/src-tauri/tauri.conf.json',
   'desktop/tauri/src-tauri/capabilities/default.json',
-  'desktop/tauri/src-tauri/.taurignore',
   'desktop/tauri/src-tauri/rust-toolchain.toml',
   'desktop/tauri/src-tauri/icons/tray-icon.png',
   'desktop/tauri/latest.json.example',
