@@ -29,3 +29,7 @@ The project is plain local Android development and does not use Manus-managed se
 ## Included Android resources
 
 The project includes density-specific legacy launcher PNGs, Android 8+ adaptive and round launcher icons, a vector foreground, app strings, colors, light/dark themes, ProGuard configuration, and standard unit/instrumented-test source-set folders. See `ICONS.md` for the inventory.
+
+## GitHub Actions
+
+The Android CI workflow is at `.github/workflows/build.yml`. It runs on pushes to `main` or `master`, pull requests, and manual workflow dispatches. It checks out the project, configures Java 17 and Gradle, assembles the debug APK, and uploads `app-debug.apk` as a workflow artifact.
