@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "release": "1.0.0",
+  "artifacts": [
+    {
+      "name": "FedPromptly Muse Audit-Setup-1.0.0-x64.exe",
+      "platform": "windows-x64",
+      "sha256": "REPLACE_WITH_RELEASE_HASH",
+      "signature": "REPLACE_WITH_SIGNATURE_REFERENCE"
+    },
+    {
+      "name": "FedPromptly Muse Audit.app",
+      "platform": "macos",
+      "sha256": "REPLACE_WITH_RELEASE_HASH",
+      "signature": "REPLACE_WITH_NOTARIZATION_REFERENCE"
+    }
+  ]
+}

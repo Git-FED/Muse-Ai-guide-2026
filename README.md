@@ -1,76 +1,69 @@
-# FedPromptly × Muse by Meta
+# FedPromptly Muse Audit
 
-<img width="1312" height="711" alt="Screenshot 2026-10-01 164727" src="https://github.com/user-attachments/assets/bc683765-5a19-4fe9-9942-d37f41eef586" />
+FedPromptly Muse Audit is an offline-first usage-audit companion for Muse-by-Meta workflows. It provides a responsive static guide plus a device-local ledger for recording evidence, sent/received bytes, value status, and outcomes. It does **not** claim private Muse telemetry or provide a Meta account integration.
 
-A standalone, Muse-by-Meta-themed usage-audit companion for people who want to understand what Muse did during a multi-step task without pretending to have telemetry they cannot actually see.
+## What is included
 
-## What this project is
+| Surface | Location | Behavior |
+|---|---|---|
+| Web/PWA | `site/` | Self-contained HTML pages and a local `localStorage` ledger |
+| Android | `android/` | Local Android WebView shell around the same site |
+| Windows | `desktop/electron/` | Electron URL-to-app shell with an NSIS installer target |
+| macOS | `desktop/tauri/` | Tauri URL-to-web-app shell with a `.app` bundle target |
 
-FedPromptly provides a visual field guide, copy-ready prompts, and reporting patterns for auditing **Muse by Meta workflows**. It is not a Meta product, does not claim private access to Meta telemetry, and does not replace Muse or Meta’s own product documentation.
+The static pages work with `file://` as well as a local web server. Ledger records stay in the browser or WebView's `localStorage` unless a user explicitly exports CSV or JSON.
 
-The central rule is simple: record each Muse action, preserve the evidence, and keep **measured**, **reported**, **estimated**, and **unavailable** values separate.
-
-<img width="1308" height="708" alt="Screenshot 2026-10-01 165027" src="https://github.com/user-attachments/assets/d0856986-93e7-40cc-9b07-3bca2fb5dd0a" />
-
-## Standalone HTML pages
-
-The complete information layer is available through self-contained HTML files:
-
-- `index.html` — Muse by Meta control room and project overview
-- `usage-audit.html` — full Muse Data Usage Audit Mode guide
-- `docs.html` — HTML project manual, local opening, deployment, and guardrails
-- `support.html` — grouped FedPromptly support and ecosystem page
-- `privacy.html` — data-minimization guidance for Muse workflow audits
-- `terms.html` — project, provider, and telemetry boundaries
-- `accessibility.html` — keyboard, motion, contrast, and print notes
-- `404.html` — animated Muse signal-lost state
-
-Every HTML page embeds its own CSS and JavaScript, works with `file://`, includes responsive layout, animated reveal behavior, reduced-motion support, and the shared Muse-by-Meta visual system.
-
-<img width="1308" height="715" alt="Screenshot 2026-10-01 164820" src="https://github.com/user-attachments/assets/d635e2d1-def2-4230-b6d7-2f24ba18a0c7" />
-
-## Open locally
-
-Double-click `index.html`, or serve the folder for local navigation testing:
+## Run the web version
 
 ```bash
+cd site
 python3 -m http.server 8080
 ```
 
-Then visit `http://localhost:8080`.
+Open `http://localhost:8080/usage-audit.html`.
 
-<img width="1306" height="713" alt="Screenshot 2026-10-01 164901" src="https://github.com/user-attachments/assets/58a3e3e1-bc73-40d2-a60e-ad3e2f539825" />
+## Desktop builds
 
-## Muse audit principles
+The desktop wrappers share the canonical site under `site/`; they do not create a second maintained frontend.
 
-1. Define one discrete Muse action at a time.
-2. Record task ID, action ID, target, timing, outgoing data, incoming data, total, evidence, outcome, retries, and privacy level.
-3. Keep Muse model-token usage separate from network-byte usage.
-4. Label every value as measured, reported, estimated, or unavailable.
-5. Ask before sign-in, account connection, uploads, large downloads, form submissions, purchases, settings changes, or sensitive disclosures.
-6. Do not retain private content when category, size, and evidence are enough.
+```bash
+# Windows Electron / NSIS installer
+cd desktop/electron
+npm ci
+npm run verify
+npm run dist
 
-## Deployment
-
-This is a plain static HTML repository. For a root-level Cloudflare Workers static-asset deployment:
-
-```text
-Build command: [blank]
-Deploy command: npx wrangler deploy --assets=.
-Root directory: /
-Production branch: main
+# macOS Tauri / .app bundle (run on macOS)
+cd desktop/tauri
+npm ci
+npm run verify
+npm run build:macos
 ```
-<img width="1299" height="719" alt="Screenshot 2026-10-01 165124" src="https://github.com/user-attachments/assets/896a4ae9-d76d-4702-90d2-43ba54197dab" />
 
-## Scope and attribution
+See [DESKTOP-TARGETS.md](DESKTOP-TARGETS.md), [desktop/README.md](desktop/README.md), and the target-specific READMEs for the precise output paths and security boundaries.
 
-FedPromptly is an independent project themed for Muse by Meta. “Muse by Meta” and related marks belong to their respective owners. Confirm current Muse capabilities, Meta terms, privacy requirements, and regional rules before deploying an audit workflow.
+For the exhaustive checked-in structure, see [COMPLETE-DESKTOP-TREE.md](COMPLETE-DESKTOP-TREE.md). Release signing, notarization, updater feeds, and publishing are documented in [RELEASE-READINESS.md](RELEASE-READINESS.md) but are not enabled without project-owned credentials.
 
-## Contact
+## Android build
 
-- careers@fedpromptly.com
-- support@fedpromptly.com
-- contact@fedpromptly.com
-- business@fedpromptly.com
+Open `android/` in Android Studio or run the following in a Java 17 / Android SDK environment:
 
-<img width="1304" height="711" alt="Screenshot 2026-10-01 164953" src="https://github.com/user-attachments/assets/2b05b647-c7ce-46b8-80af-d3cad90824e7" />
+```bash
+cd android
+./gradlew assembleDebug
+bash ./scripts/capture-apk-provenance.sh \
+  app/build/outputs/apk/debug/app-debug.apk \
+  app/build/outputs/apk/debug/apk-provenance.json
+```
+
+## GitHub Actions
+
+The unified workflow in [`.github/workflows/build-all.yml`](.github/workflows/build-all.yml) validates the web and desktop structure, builds the Android debug APK, produces an Electron Windows NSIS installer, and produces a Tauri macOS `.app` bundle. CI artifacts are build outputs, not signed or notarized release binaries.
+
+## Trust and security
+
+Read [SECURITY.md](SECURITY.md) before installing an APK or desktop binary. The application is designed to remain local-first: no account, backend, API key, analytics SDK, or automatic third-party loader is required. Explicit external links open only after user activation in the default system handler.
+
+## License
+
+This project is available under the [MIT License](LICENSE).

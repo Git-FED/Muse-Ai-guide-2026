@@ -1,0 +1,14 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "type": "application",
+      "name": "FedPromptly Muse Audit",
+      "version": "1.0.0"
+    }
+  },
+  "components": [],
+  "note": "Generate a release-specific SBOM in CI from package-lock.json and Cargo.lock before signing or publishing."
+}
