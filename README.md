@@ -1,41 +1,65 @@
-# FedPromptly Muse Audit Android App
+# FedPromptly × Muse by Meta
 
-This project wraps the supplied dependency-free FedPromptly/Muse by Meta static site in a native Android WebView shell.
+A standalone, Muse-by-Meta-themed usage-audit companion for people who want to understand what Muse did during a multi-step task without pretending to have telemetry they cannot actually see.
 
-## Behavior
+## What this project is
 
-- The full site is bundled under `app/src/main/assets/site` and opens offline.
-- Internal page links stay inside the app.
-- External HTTPS, `mailto:`, and community/payment links open in the device's browser or registered handler.
-- The bundled payment scripts remain part of the original site and require internet access if those sections are used.
-- The app is intentionally not branded as an official Meta product.
+FedPromptly provides a visual field guide, copy-ready prompts, and reporting patterns for auditing **Muse by Meta workflows**. It is not a Meta product, does not claim private access to Meta telemetry, and does not replace Muse or Meta’s own product documentation.
 
-## Build
+The central rule is simple: record each Muse action, preserve the evidence, and keep **measured**, **reported**, **estimated**, and **unavailable** values separate.
+
+## Standalone HTML pages
+
+The complete information layer is available through self-contained HTML files:
+
+- `index.html` — Muse by Meta control room and project overview
+- `usage-audit.html` — full Muse Data Usage Audit Mode guide
+- `docs.html` — HTML project manual, local opening, deployment, and guardrails
+- `support.html` — grouped FedPromptly support and ecosystem page
+- `privacy.html` — data-minimization guidance for Muse workflow audits
+- `terms.html` — project, provider, and telemetry boundaries
+- `accessibility.html` — keyboard, motion, contrast, and print notes
+- `404.html` — animated Muse signal-lost state
+
+Every HTML page embeds its own CSS and JavaScript, works with `file://`, includes responsive layout, animated reveal behavior, reduced-motion support, and the shared Muse-by-Meta visual system.
+
+## Open locally
+
+Double-click `index.html`, or serve the folder for local navigation testing:
 
 ```bash
-./gradlew assembleDebug
+python3 -m http.server 8080
 ```
 
-The debug APK is written to `app/build/outputs/apk/debug/app-debug.apk`.
+Then visit `http://localhost:8080`.
 
-## Install on a connected Android device
+## Muse audit principles
 
-```bash
-adb install -r app/build/outputs/apk/debug/app-debug.apk
+1. Define one discrete Muse action at a time.
+2. Record task ID, action ID, target, timing, outgoing data, incoming data, total, evidence, outcome, retries, and privacy level.
+3. Keep Muse model-token usage separate from network-byte usage.
+4. Label every value as measured, reported, estimated, or unavailable.
+5. Ask before sign-in, account connection, uploads, large downloads, form submissions, purchases, settings changes, or sensitive disclosures.
+6. Do not retain private content when category, size, and evidence are enough.
+
+## Deployment
+
+This is a plain static HTML repository. For a root-level Cloudflare Workers static-asset deployment:
+
+```text
+Build command: [blank]
+Deploy command: npx wrangler deploy --assets=.
+Root directory: /
+Production branch: main
 ```
 
-The project is plain local Android development and does not use Manus-managed services.
+## Scope and attribution
 
-## Included Android resources
+FedPromptly is an independent project themed for Muse by Meta. “Muse by Meta” and related marks belong to their respective owners. Confirm current Muse capabilities, Meta terms, privacy requirements, and regional rules before deploying an audit workflow.
 
-The project includes density-specific legacy launcher PNGs, Android 8+ adaptive and round launcher icons, a vector foreground, app strings, colors, light/dark themes, ProGuard configuration, and standard unit/instrumented-test source-set folders. See `ICONS.md` for the inventory.
+## Contact
 
-## GitHub Actions
-
-The Android CI workflow is at `.github/workflows/build-android.yml`. It runs on pushes to `main` or `master`, pull requests, and manual workflow dispatches. It checks out the project, configures Java 17 and Gradle, restores the executable bit on `gradlew`, assembles the debug APK, and uploads `app-debug.apk` as a workflow artifact.
-
-## Publish the APK to GitHub Packages
-
-The Maven publish workflow is at `.github/workflows/publish-android-package.yml`. It publishes the debug APK as the Maven package `com.fedpromptly:muse-audit` to the GitHub Packages registry for the current repository.
-
-To trigger it manually, push this project to GitHub, open **Actions**, choose **Publish Android Package**, click **Run workflow**, enter a version such as `1.0.0`, and run it. To trigger it from a tag instead, run `git tag v1.0.0` followed by `git push origin v1.0.0`. The workflow uses the built-in `GITHUB_TOKEN` with `packages: write`; no personal token is required.
+- careers@fedpromptly.com
+- support@fedpromptly.com
+- contact@fedpromptly.com
+- business@fedpromptly.com
