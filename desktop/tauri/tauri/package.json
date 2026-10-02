@@ -1,0 +1,17 @@
+{
+  "name": "fedpromptly-muse-audit-tauri",
+  "version": "1.0.0",
+  "description": "FedPromptly Muse Audit offline-first macOS desktop shell",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "tauri dev",
+    "generate:icons": "tauri icon ../icons/fedpromptly-icon.png -o src-tauri/icons",
+    "verify": "node ../../scripts/verify-desktop.mjs",
+    "build": "npm run generate:icons && tauri build",
+    "build:macos": "npm run build -- --bundles app"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.1.0"
+  }
+}

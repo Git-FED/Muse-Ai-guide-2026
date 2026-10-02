@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "deep-link-example-disabled",
+  "description": "Example only. Register and review a specific protocol before enabling.",
+  "windows": ["main"],
+  "permissions": ["core:default"]
+}

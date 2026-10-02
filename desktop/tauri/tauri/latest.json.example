@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "notes": "Replace this example with a signed release manifest.",
+  "pub_date": "2026-10-02T00:00:00Z",
+  "platforms": {
+    "darwin-aarch64": {
+      "signature": "REPLACE_WITH_TAURI_SIGNATURE",
+      "url": "https://github.com/YOUR_OWNER/YOUR_REPO/releases/download/v1.0.0/FedPromptly-Muse-Audit.dmg"
+    },
+    "darwin-x86_64": {
+      "signature": "REPLACE_WITH_TAURI_SIGNATURE",
+      "url": "https://github.com/YOUR_OWNER/YOUR_REPO/releases/download/v1.0.0/FedPromptly-Muse-Audit.dmg"
+    }
+  }
+}
