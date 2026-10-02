@@ -1,0 +1,59 @@
+name: Publish Android Package
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Package version, for example 1.0.0'
+        required: true
+        default: '1.0.0'
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    name: Publish APK to GitHub Packages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Restore Gradle wrapper executable permission
+        run: chmod +x ./gradlew
+
+      - name: Select package version
+        id: version
+        shell: bash
+        run: |
+          if [[ "$GITHUB_REF_NAME" == v* ]]; then
+            VERSION="${GITHUB_REF_NAME#v}"
+          else
+            VERSION="${{ inputs.version }}"
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Publishing version $VERSION"
+
+      - name: Build debug APK
+        run: ./gradlew --no-daemon assembleDebug
+
+      - name: Publish APK to GitHub Packages
+        run: ./gradlew --no-daemon publishGithubPublicationToGitHubPackagesRepository -PpackageVersion="${{ steps.version.outputs.version }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
