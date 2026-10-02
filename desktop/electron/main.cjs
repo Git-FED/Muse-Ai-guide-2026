@@ -6,8 +6,8 @@ const { fileURLToPath, pathToFileURL } = require('node:url');
 const SITE_DIRECTORY = path.join(__dirname, 'site');
 const HOME_PAGE = path.join(SITE_DIRECTORY, 'index.html');
 const DEFAULT_CONFIG = {
-  startUrl: 'local',
-  allowedHosts: [],
+  startUrl: 'https://muse.ai/',
+  allowedHosts: ['muse.ai', 'www.muse.ai'],
   windowTitle: 'FedPromptly Muse Audit',
   theme: 'dark',
   closeToTray: false,

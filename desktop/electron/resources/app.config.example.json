@@ -1,6 +1,6 @@
 {
-  "startUrl": "local",
-  "allowedHosts": ["example.com", "www.example.com"],
+  "startUrl": "https://muse.ai/",
+  "allowedHosts": ["muse.ai", "www.muse.ai"],
   "windowTitle": "FedPromptly Muse Audit",
   "theme": "dark",
   "closeToTray": false,
