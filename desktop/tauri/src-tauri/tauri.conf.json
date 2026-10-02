@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "identifier": "com.fedpromptly.museaudit.tauri",
   "build": {
-    "frontendDist": "../../../site"
+    "frontendDist": "../../../site",
+    "devUrl": "https://muse.ai/"
   },
   "app": {
     "windows": [

@@ -2,10 +2,15 @@
 
 use tauri::{webview::NewWindowResponse, Url, WebviewWindowBuilder};
 
+const START_URL: &str = "https://muse.ai/";
+
 fn is_internal_app_url(url: &Url) -> bool {
     match url.scheme() {
         "tauri" | "asset" => true,
-        "http" | "https" => matches!(url.host_str(), Some("tauri.localhost") | Some("localhost")),
+        "http" | "https" => matches!(
+            url.host_str(),
+            Some("tauri.localhost") | Some("localhost") | Some("muse.ai") | Some("www.muse.ai")
+        ),
         _ => false,
     }
 }
@@ -24,7 +29,7 @@ fn main() {
             let window_config =
                 app.config().app.windows.first().expect("missing primary window configuration");
 
-            WebviewWindowBuilder::from_config(app, window_config)?
+            let window = WebviewWindowBuilder::from_config(app, window_config)?
                 .on_navigation(|url| {
                     if is_internal_app_url(url) {
                         true
@@ -38,6 +43,8 @@ fn main() {
                     NewWindowResponse::Deny
                 })
                 .build()?;
+
+            window.navigate(START_URL.parse().expect("valid Muse startup URL"))?;
 
             Ok(())
         })

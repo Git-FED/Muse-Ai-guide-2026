@@ -1,6 +1,6 @@
 # Tauri macOS shell
 
-This package turns the local `site/` bundle into a compact macOS application. It packages the shared static site directly from `../../../site`; no duplicate web build directory is committed.
+This package turns `https://muse.ai/` into a compact macOS application. It packages the shared static site directly from `../../../site` as a build-time fallback; no duplicate web build directory is committed.
 
 ## Prerequisites
 
@@ -30,9 +30,9 @@ The repository also includes the Tauri v2 `capabilities/default.json` permission
 
 ## Behavior and boundaries
 
-- The static site is served from Tauri's packaged local origin.
-- The Content Security Policy only permits bundled content and inline scripts/styles already present in the static pages.
-- Internal navigation remains inside Tauri's local origin.
+- The production window starts at `https://muse.ai/`.
+- Navigation remains inside `muse.ai` or `www.muse.ai`; other explicit links open in the default system handler.
+- The bundled static site remains available as the packaged build-time fallback.
 - Explicit `http:`, `https:`, and `mailto:` links open in the default system handler; other schemes are blocked.
 
 The bundle is unsigned and not notarized by default. Before external distribution, sign it with a project-controlled Apple Developer certificate and complete notarization; Gatekeeper warnings are expected for an unsigned build. The `desktop/tauri/.env.example` file documents the CI variables without containing secrets.
