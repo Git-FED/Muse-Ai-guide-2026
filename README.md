@@ -10,6 +10,8 @@ FedPromptly provides a visual field guide, copy-ready prompts, and reporting pat
 
 The central rule is simple: record each Muse action, preserve the evidence, and keep **measured**, **reported**, **estimated**, and **unavailable** values separate.
 
+<img width="1308" height="708" alt="Screenshot 2026-10-01 165027" src="https://github.com/user-attachments/assets/d0856986-93e7-40cc-9b07-3bca2fb5dd0a" />
+
 ## Standalone HTML pages
 
 The complete information layer is available through self-contained HTML files:
