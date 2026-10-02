@@ -60,7 +60,7 @@ jobs:
           distribution: temurin
           java-version: '17'
       - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v6
       - name: Restore Gradle wrapper executable permission
         run: chmod +x ./gradlew
       - name: Assemble debug APK
