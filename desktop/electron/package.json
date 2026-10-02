@@ -1,0 +1,24 @@
+{
+  "name": "fedpromptly-muse-audit-electron",
+  "version": "1.0.0",
+  "description": "FedPromptly Muse Audit offline-first Windows desktop shell",
+  "author": "FedPromptly",
+  "main": "main.cjs",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run prepare:site && electron .",
+    "prepare:site": "node ../scripts/sync-site.mjs electron",
+    "verify": "node ../../scripts/verify-desktop.mjs && node --test test/*.test.cjs",
+    "sbom": "node scripts/generate-sbom.cjs",
+    "dist": "npm run prepare:site && electron-builder --config electron-builder.yml --win nsis --x64"
+  },
+  "devDependencies": {
+    "electron": "^44.5.1",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.fedpromptly.museaudit.electron",
+    "productName": "FedPromptly Muse Audit"
+  }
+}

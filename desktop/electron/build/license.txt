@@ -1,0 +1,5 @@
+FedPromptly Muse Audit
+
+This installer bundles the independent FedPromptly Muse Audit static guide and local-first ledger. It is not an official Meta product and does not provide private Muse telemetry or account access.
+
+See the project LICENSE and SECURITY.md files for terms and distribution guidance.

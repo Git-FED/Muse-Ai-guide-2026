@@ -1,0 +1,10 @@
+# electron-builder generates latest.yml after a signed Windows build.
+# Keep this example only; never publish placeholder hashes or URLs.
+version: 1.0.0
+files:
+  - url: FedPromptly-Muse-Audit-Setup-1.0.0-x64.exe
+    sha512: REPLACE_WITH_ELECTRON_BUILDER_SHA512
+    size: REPLACE_WITH_FILE_SIZE
+path: FedPromptly-Muse-Audit-Setup-1.0.0-x64.exe
+sha512: REPLACE_WITH_ELECTRON_BUILDER_SHA512
+releaseDate: 2026-10-02T00:00:00.000Z

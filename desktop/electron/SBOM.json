@@ -1,0 +1,1426 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "components": [
+    {
+      "type": "library",
+      "name": "@electron-internal/extract-zip",
+      "version": "1.0.5"
+    },
+    {
+      "type": "library",
+      "name": "@electron/asar",
+      "version": "3.4.1"
+    },
+    {
+      "type": "library",
+      "name": "@electron/asar/node_modules/balanced-match",
+      "version": "1.0.2"
+    },
+    {
+      "type": "library",
+      "name": "@electron/asar/node_modules/brace-expansion",
+      "version": "1.1.21"
+    },
+    {
+      "type": "library",
+      "name": "@electron/asar/node_modules/minimatch",
+      "version": "3.1.5"
+    },
+    {
+      "type": "library",
+      "name": "@electron/fuses",
+      "version": "1.8.0"
+    },
+    {
+      "type": "library",
+      "name": "@electron/fuses/node_modules/fs-extra",
+      "version": "9.1.0"
+    },
+    {
+      "type": "library",
+      "name": "@electron/get",
+      "version": "5.1.0"
+    },
+    {
+      "type": "library",
+      "name": "@electron/notarize",
+      "version": "2.5.0"
+    },
+    {
+      "type": "library",
+      "name": "@electron/notarize/node_modules/fs-extra",
+      "version": "9.1.0"
+    },
+    {
+      "type": "library",
+      "name": "@electron/osx-sign",
+      "version": "1.3.3"
+    },
+    {
+      "type": "library",
+      "name": "@electron/osx-sign/node_modules/isbinaryfile",
+      "version": "4.0.10"
+    },
+    {
+      "type": "library",
+      "name": "@electron/rebuild",
+      "version": "4.2.0"
+    },
+    {
+      "type": "library",
+      "name": "@electron/universal",
+      "version": "2.0.3"
+    },
+    {
+      "type": "library",
+      "name": "@electron/universal/node_modules/balanced-match",
+      "version": "1.0.2"
+    },
+    {
+      "type": "library",
+      "name": "@electron/universal/node_modules/brace-expansion",
+      "version": "2.1.7"
+    },
+    {
+      "type": "library",
+      "name": "@electron/universal/node_modules/fs-extra",
+      "version": "11.4.1"
+    },
+    {
+      "type": "library",
+      "name": "@electron/universal/node_modules/minimatch",
+      "version": "9.0.9"
+    },
+    {
+      "type": "library",
+      "name": "@electron/windows-sign",
+      "version": "1.2.2"
+    },
+    {
+      "type": "library",
+      "name": "@electron/windows-sign/node_modules/fs-extra",
+      "version": "11.4.1"
+    },
+    {
+      "type": "library",
+      "name": "@isaacs/fs-minipass",
+      "version": "4.0.1"
+    },
+    {
+      "type": "library",
+      "name": "@malept/cross-spawn-promise",
+      "version": "2.0.0"
+    },
+    {
+      "type": "library",
+      "name": "@malept/flatpak-bundler",
+      "version": "0.4.0"
+    },
+    {
+      "type": "library",
+      "name": "@malept/flatpak-bundler/node_modules/fs-extra",
+      "version": "9.1.0"
+    },
+    {
+      "type": "library",
+      "name": "@noble/hashes",
+      "version": "2.4.0"
+    },
+    {
+      "type": "library",
+      "name": "@peculiar/asn1-schema",
+      "version": "2.10.0"
+    },
+    {
+      "type": "library",
+      "name": "@peculiar/json-schema",
+      "version": "1.1.12"
+    },
+    {
+      "type": "library",
+      "name": "@peculiar/utils",
+      "version": "2.0.3"
+    },
+    {
+      "type": "library",
+      "name": "@peculiar/webcrypto",
+      "version": "1.7.1"
+    },
+    {
+      "type": "library",
+      "name": "@sindresorhus/is",
+      "version": "4.6.0"
+    },
+    {
+      "type": "library",
+      "name": "@szmarczak/http-timer",
+      "version": "4.0.6"
+    },
+    {
+      "type": "library",
+      "name": "@types/cacheable-request",
+      "version": "6.0.3"
+    },
+    {
+      "type": "library",
+      "name": "@types/debug",
+      "version": "4.1.13"
+    },
+    {
+      "type": "library",
+      "name": "@types/fs-extra",
+      "version": "9.0.13"
+    },
+    {
+      "type": "library",
+      "name": "@types/http-cache-semantics",
+      "version": "4.2.0"
+    },
+    {
+      "type": "library",
+      "name": "@types/keyv",
+      "version": "3.1.4"
+    },
+    {
+      "type": "library",
+      "name": "@types/ms",
+      "version": "2.1.0"
+    },
+    {
+      "type": "library",
+      "name": "@types/node",
+      "version": "24.19.1"
+    },
+    {
+      "type": "library",
+      "name": "@types/responselike",
+      "version": "1.0.3"
+    },
+    {
+      "type": "library",
+      "name": "@xmldom/xmldom",
+      "version": "0.8.15"
+    },
+    {
+      "type": "library",
+      "name": "abbrev",
+      "version": "4.0.0"
+    },
+    {
+      "type": "library",
+      "name": "agent-base",
+      "version": "7.1.4"
+    },
+    {
+      "type": "library",
+      "name": "ajv",
+      "version": "8.20.0"
+    },
+    {
+      "type": "library",
+      "name": "ansi-regex",
+      "version": "5.0.1"
+    },
+    {
+      "type": "library",
+      "name": "ansi-styles",
+      "version": "4.3.0"
+    },
+    {
+      "type": "library",
+      "name": "app-builder-lib",
+      "version": "26.15.3"
+    },
+    {
+      "type": "library",
+      "name": "app-builder-lib/node_modules/@electron/get",
+      "version": "3.1.0"
+    },
+    {
+      "type": "library",
+      "name": "app-builder-lib/node_modules/@electron/get/node_modules/fs-extra",
+      "version": "8.1.0"
+    },
+    {
+      "type": "library",
+      "name": "app-builder-lib/node_modules/@electron/get/node_modules/semver",
+      "version": "6.3.1"
+    },
+    {
+      "type": "library",
+      "name": "app-builder-lib/node_modules/ci-info",
+      "version": "4.3.1"
+    },
+    {
+      "type": "library",
+      "name": "app-builder-lib/node_modules/env-paths",
+      "version": "2.2.1"
+    },
+    {
+      "type": "library",
+      "name": "app-builder-lib/node_modules/jsonfile",
+      "version": "4.0.0"
+    },
+    {
+      "type": "library",
+      "name": "app-builder-lib/node_modules/semver",
+      "version": "7.7.4"
+    },
+    {
+      "type": "library",
+      "name": "app-builder-lib/node_modules/universalify",
+      "version": "0.1.2"
+    },
+    {
+      "type": "library",
+      "name": "argparse",
+      "version": "2.0.1"
+    },
+    {
+      "type": "library",
+      "name": "asn1js",
+      "version": "3.0.10"
+    },
+    {
+      "type": "library",
+      "name": "async",
+      "version": "3.2.6"
+    },
+    {
+      "type": "library",
+      "name": "async-exit-hook",
+      "version": "2.0.1"
+    },
+    {
+      "type": "library",
+      "name": "asynckit",
+      "version": "0.4.0"
+    },
+    {
+      "type": "library",
+      "name": "at-least-node",
+      "version": "1.0.0"
+    },
+    {
+      "type": "library",
+      "name": "aws4",
+      "version": "1.13.2"
+    },
+    {
+      "type": "library",
+      "name": "balanced-match",
+      "version": "4.0.4"
+    },
+    {
+      "type": "library",
+      "name": "base64-js",
+      "version": "1.5.1"
+    },
+    {
+      "type": "library",
+      "name": "bluebird",
+      "version": "3.7.2"
+    },
+    {
+      "type": "library",
+      "name": "boolean",
+      "version": "3.2.0"
+    },
+    {
+      "type": "library",
+      "name": "brace-expansion",
+      "version": "5.0.12"
+    },
+    {
+      "type": "library",
+      "name": "buffer-from",
+      "version": "1.1.2"
+    },
+    {
+      "type": "library",
+      "name": "builder-util",
+      "version": "26.15.3"
+    },
+    {
+      "type": "library",
+      "name": "builder-util-runtime",
+      "version": "9.7.0"
+    },
+    {
+      "type": "library",
+      "name": "bytestreamjs",
+      "version": "2.0.1"
+    },
+    {
+      "type": "library",
+      "name": "cacheable-lookup",
+      "version": "5.0.4"
+    },
+    {
+      "type": "library",
+      "name": "cacheable-request",
+      "version": "7.0.4"
+    },
+    {
+      "type": "library",
+      "name": "call-bind-apply-helpers",
+      "version": "1.0.2"
+    },
+    {
+      "type": "library",
+      "name": "chalk",
+      "version": "4.1.2"
+    },
+    {
+      "type": "library",
+      "name": "chownr",
+      "version": "3.0.0"
+    },
+    {
+      "type": "library",
+      "name": "chromium-pickle-js",
+      "version": "0.2.0"
+    },
+    {
+      "type": "library",
+      "name": "ci-info",
+      "version": "4.4.0"
+    },
+    {
+      "type": "library",
+      "name": "cliui",
+      "version": "8.0.1"
+    },
+    {
+      "type": "library",
+      "name": "clone-response",
+      "version": "1.0.3"
+    },
+    {
+      "type": "library",
+      "name": "color-convert",
+      "version": "2.0.1"
+    },
+    {
+      "type": "library",
+      "name": "color-name",
+      "version": "1.1.4"
+    },
+    {
+      "type": "library",
+      "name": "combined-stream",
+      "version": "1.0.8"
+    },
+    {
+      "type": "library",
+      "name": "commander",
+      "version": "5.1.0"
+    },
+    {
+      "type": "library",
+      "name": "compare-version",
+      "version": "0.1.2"
+    },
+    {
+      "type": "library",
+      "name": "concat-map",
+      "version": "0.0.1"
+    },
+    {
+      "type": "library",
+      "name": "core-util-is",
+      "version": "1.0.3"
+    },
+    {
+      "type": "library",
+      "name": "cross-dirname",
+      "version": "0.1.0"
+    },
+    {
+      "type": "library",
+      "name": "cross-spawn",
+      "version": "7.0.6"
+    },
+    {
+      "type": "library",
+      "name": "cross-spawn/node_modules/isexe",
+      "version": "2.0.0"
+    },
+    {
+      "type": "library",
+      "name": "cross-spawn/node_modules/which",
+      "version": "2.0.2"
+    },
+    {
+      "type": "library",
+      "name": "debug",
+      "version": "4.4.3"
+    },
+    {
+      "type": "library",
+      "name": "decompress-response",
+      "version": "6.0.0"
+    },
+    {
+      "type": "library",
+      "name": "decompress-response/node_modules/mimic-response",
+      "version": "3.1.0"
+    },
+    {
+      "type": "library",
+      "name": "defer-to-connect",
+      "version": "2.0.1"
+    },
+    {
+      "type": "library",
+      "name": "define-data-property",
+      "version": "1.1.4"
+    },
+    {
+      "type": "library",
+      "name": "define-properties",
+      "version": "1.2.1"
+    },
+    {
+      "type": "library",
+      "name": "delayed-stream",
+      "version": "1.0.0"
+    },
+    {
+      "type": "library",
+      "name": "detect-node",
+      "version": "2.1.0"
+    },
+    {
+      "type": "library",
+      "name": "dir-compare",
+      "version": "4.2.0"
+    },
+    {
+      "type": "library",
+      "name": "dir-compare/node_modules/balanced-match",
+      "version": "1.0.2"
+    },
+    {
+      "type": "library",
+      "name": "dir-compare/node_modules/brace-expansion",
+      "version": "1.1.21"
+    },
+    {
+      "type": "library",
+      "name": "dir-compare/node_modules/minimatch",
+      "version": "3.1.5"
+    },
+    {
+      "type": "library",
+      "name": "dmg-builder",
+      "version": "26.15.3"
+    },
+    {
+      "type": "library",
+      "name": "dotenv",
+      "version": "16.6.1"
+    },
+    {
+      "type": "library",
+      "name": "dotenv-expand",
+      "version": "11.0.7"
+    },
+    {
+      "type": "library",
+      "name": "dunder-proto",
+      "version": "1.0.1"
+    },
+    {
+      "type": "library",
+      "name": "duplexer2",
+      "version": "0.1.4"
+    },
+    {
+      "type": "library",
+      "name": "ejs",
+      "version": "3.1.10"
+    },
+    {
+      "type": "library",
+      "name": "electron",
+      "version": "44.5.1"
+    },
+    {
+      "type": "library",
+      "name": "electron-builder",
+      "version": "26.15.3"
+    },
+    {
+      "type": "library",
+      "name": "electron-builder-squirrel-windows",
+      "version": "26.15.3"
+    },
+    {
+      "type": "library",
+      "name": "electron-publish",
+      "version": "26.15.3"
+    },
+    {
+      "type": "library",
+      "name": "electron-winstaller",
+      "version": "5.4.0"
+    },
+    {
+      "type": "library",
+      "name": "electron-winstaller/node_modules/fs-extra",
+      "version": "7.0.1"
+    },
+    {
+      "type": "library",
+      "name": "electron-winstaller/node_modules/jsonfile",
+      "version": "4.0.0"
+    },
+    {
+      "type": "library",
+      "name": "electron-winstaller/node_modules/universalify",
+      "version": "0.1.2"
+    },
+    {
+      "type": "library",
+      "name": "emoji-regex",
+      "version": "8.0.0"
+    },
+    {
+      "type": "library",
+      "name": "end-of-stream",
+      "version": "1.4.5"
+    },
+    {
+      "type": "library",
+      "name": "env-paths",
+      "version": "3.0.0"
+    },
+    {
+      "type": "library",
+      "name": "err-code",
+      "version": "2.0.3"
+    },
+    {
+      "type": "library",
+      "name": "es-define-property",
+      "version": "1.0.1"
+    },
+    {
+      "type": "library",
+      "name": "es-errors",
+      "version": "1.3.0"
+    },
+    {
+      "type": "library",
+      "name": "es-object-atoms",
+      "version": "1.1.2"
+    },
+    {
+      "type": "library",
+      "name": "es-set-tostringtag",
+      "version": "2.1.0"
+    },
+    {
+      "type": "library",
+      "name": "es6-error",
+      "version": "4.1.1"
+    },
+    {
+      "type": "library",
+      "name": "escalade",
+      "version": "3.2.0"
+    },
+    {
+      "type": "library",
+      "name": "escape-string-regexp",
+      "version": "4.0.0"
+    },
+    {
+      "type": "library",
+      "name": "exponential-backoff",
+      "version": "3.1.3"
+    },
+    {
+      "type": "library",
+      "name": "fast-deep-equal",
+      "version": "3.1.3"
+    },
+    {
+      "type": "library",
+      "name": "fast-uri",
+      "version": "3.1.8"
+    },
+    {
+      "type": "library",
+      "name": "fdir",
+      "version": "6.5.0"
+    },
+    {
+      "type": "library",
+      "name": "filelist",
+      "version": "1.0.6"
+    },
+    {
+      "type": "library",
+      "name": "filelist/node_modules/balanced-match",
+      "version": "1.0.2"
+    },
+    {
+      "type": "library",
+      "name": "filelist/node_modules/brace-expansion",
+      "version": "2.1.7"
+    },
+    {
+      "type": "library",
+      "name": "filelist/node_modules/minimatch",
+      "version": "5.1.9"
+    },
+    {
+      "type": "library",
+      "name": "form-data",
+      "version": "4.0.6"
+    },
+    {
+      "type": "library",
+      "name": "fs-extra",
+      "version": "10.1.0"
+    },
+    {
+      "type": "library",
+      "name": "fs.realpath",
+      "version": "1.0.0"
+    },
+    {
+      "type": "library",
+      "name": "function-bind",
+      "version": "1.1.2"
+    },
+    {
+      "type": "library",
+      "name": "get-caller-file",
+      "version": "2.0.5"
+    },
+    {
+      "type": "library",
+      "name": "get-intrinsic",
+      "version": "1.3.0"
+    },
+    {
+      "type": "library",
+      "name": "get-proto",
+      "version": "1.0.1"
+    },
+    {
+      "type": "library",
+      "name": "get-stream",
+      "version": "5.2.0"
+    },
+    {
+      "type": "library",
+      "name": "glob",
+      "version": "7.2.3"
+    },
+    {
+      "type": "library",
+      "name": "glob/node_modules/balanced-match",
+      "version": "1.0.2"
+    },
+    {
+      "type": "library",
+      "name": "glob/node_modules/brace-expansion",
+      "version": "1.1.21"
+    },
+    {
+      "type": "library",
+      "name": "glob/node_modules/minimatch",
+      "version": "3.1.5"
+    },
+    {
+      "type": "library",
+      "name": "global-agent",
+      "version": "3.0.0"
+    },
+    {
+      "type": "library",
+      "name": "globalthis",
+      "version": "1.0.4"
+    },
+    {
+      "type": "library",
+      "name": "gopd",
+      "version": "1.2.0"
+    },
+    {
+      "type": "library",
+      "name": "got",
+      "version": "11.8.6"
+    },
+    {
+      "type": "library",
+      "name": "graceful-fs",
+      "version": "4.2.11"
+    },
+    {
+      "type": "library",
+      "name": "has-flag",
+      "version": "4.0.0"
+    },
+    {
+      "type": "library",
+      "name": "has-property-descriptors",
+      "version": "1.0.2"
+    },
+    {
+      "type": "library",
+      "name": "has-symbols",
+      "version": "1.1.0"
+    },
+    {
+      "type": "library",
+      "name": "has-tostringtag",
+      "version": "1.0.2"
+    },
+    {
+      "type": "library",
+      "name": "hasown",
+      "version": "2.0.4"
+    },
+    {
+      "type": "library",
+      "name": "hosted-git-info",
+      "version": "4.1.0"
+    },
+    {
+      "type": "library",
+      "name": "http-cache-semantics",
+      "version": "4.2.0"
+    },
+    {
+      "type": "library",
+      "name": "http-proxy-agent",
+      "version": "7.0.2"
+    },
+    {
+      "type": "library",
+      "name": "http2-wrapper",
+      "version": "1.0.3"
+    },
+    {
+      "type": "library",
+      "name": "https-proxy-agent",
+      "version": "7.0.6"
+    },
+    {
+      "type": "library",
+      "name": "inflight",
+      "version": "1.0.6"
+    },
+    {
+      "type": "library",
+      "name": "inherits",
+      "version": "2.0.4"
+    },
+    {
+      "type": "library",
+      "name": "is-fullwidth-code-point",
+      "version": "3.0.0"
+    },
+    {
+      "type": "library",
+      "name": "isarray",
+      "version": "1.0.0"
+    },
+    {
+      "type": "library",
+      "name": "isbinaryfile",
+      "version": "5.0.7"
+    },
+    {
+      "type": "library",
+      "name": "isexe",
+      "version": "3.1.5"
+    },
+    {
+      "type": "library",
+      "name": "jake",
+      "version": "10.9.4"
+    },
+    {
+      "type": "library",
+      "name": "jiti",
+      "version": "2.7.0"
+    },
+    {
+      "type": "library",
+      "name": "js-yaml",
+      "version": "4.3.2"
+    },
+    {
+      "type": "library",
+      "name": "json-buffer",
+      "version": "3.0.1"
+    },
+    {
+      "type": "library",
+      "name": "json-schema-traverse",
+      "version": "1.0.0"
+    },
+    {
+      "type": "library",
+      "name": "json-stringify-safe",
+      "version": "5.0.1"
+    },
+    {
+      "type": "library",
+      "name": "json5",
+      "version": "2.2.3"
+    },
+    {
+      "type": "library",
+      "name": "jsonfile",
+      "version": "6.2.1"
+    },
+    {
+      "type": "library",
+      "name": "keyv",
+      "version": "4.5.4"
+    },
+    {
+      "type": "library",
+      "name": "lazy-val",
+      "version": "1.0.5"
+    },
+    {
+      "type": "library",
+      "name": "lodash",
+      "version": "4.18.1"
+    },
+    {
+      "type": "library",
+      "name": "lowercase-keys",
+      "version": "2.0.0"
+    },
+    {
+      "type": "library",
+      "name": "lru-cache",
+      "version": "6.0.0"
+    },
+    {
+      "type": "library",
+      "name": "matcher",
+      "version": "3.0.0"
+    },
+    {
+      "type": "library",
+      "name": "math-intrinsics",
+      "version": "1.1.0"
+    },
+    {
+      "type": "library",
+      "name": "mime",
+      "version": "2.6.0"
+    },
+    {
+      "type": "library",
+      "name": "mime-db",
+      "version": "1.52.0"
+    },
+    {
+      "type": "library",
+      "name": "mime-types",
+      "version": "2.1.35"
+    },
+    {
+      "type": "library",
+      "name": "mimic-response",
+      "version": "1.0.1"
+    },
+    {
+      "type": "library",
+      "name": "minimatch",
+      "version": "10.2.6"
+    },
+    {
+      "type": "library",
+      "name": "minimist",
+      "version": "1.2.8"
+    },
+    {
+      "type": "library",
+      "name": "minipass",
+      "version": "7.1.3"
+    },
+    {
+      "type": "library",
+      "name": "minizlib",
+      "version": "3.1.0"
+    },
+    {
+      "type": "library",
+      "name": "mkdirp",
+      "version": "0.5.6"
+    },
+    {
+      "type": "library",
+      "name": "ms",
+      "version": "2.1.3"
+    },
+    {
+      "type": "library",
+      "name": "node-abi",
+      "version": "4.35.0"
+    },
+    {
+      "type": "library",
+      "name": "node-api-version",
+      "version": "0.2.1"
+    },
+    {
+      "type": "library",
+      "name": "node-gyp",
+      "version": "12.4.0"
+    },
+    {
+      "type": "library",
+      "name": "node-gyp/node_modules/env-paths",
+      "version": "2.2.1"
+    },
+    {
+      "type": "library",
+      "name": "node-gyp/node_modules/isexe",
+      "version": "4.0.0"
+    },
+    {
+      "type": "library",
+      "name": "node-gyp/node_modules/undici",
+      "version": "6.29.0"
+    },
+    {
+      "type": "library",
+      "name": "node-gyp/node_modules/which",
+      "version": "6.0.1"
+    },
+    {
+      "type": "library",
+      "name": "node-int64",
+      "version": "0.4.0"
+    },
+    {
+      "type": "library",
+      "name": "nopt",
+      "version": "9.0.0"
+    },
+    {
+      "type": "library",
+      "name": "normalize-url",
+      "version": "6.1.0"
+    },
+    {
+      "type": "library",
+      "name": "object-keys",
+      "version": "1.1.1"
+    },
+    {
+      "type": "library",
+      "name": "once",
+      "version": "1.4.0"
+    },
+    {
+      "type": "library",
+      "name": "p-cancelable",
+      "version": "2.1.1"
+    },
+    {
+      "type": "library",
+      "name": "p-limit",
+      "version": "3.1.0"
+    },
+    {
+      "type": "library",
+      "name": "path-is-absolute",
+      "version": "1.0.1"
+    },
+    {
+      "type": "library",
+      "name": "path-key",
+      "version": "3.1.1"
+    },
+    {
+      "type": "library",
+      "name": "pe-library",
+      "version": "0.4.1"
+    },
+    {
+      "type": "library",
+      "name": "picocolors",
+      "version": "1.1.1"
+    },
+    {
+      "type": "library",
+      "name": "picomatch",
+      "version": "4.0.7"
+    },
+    {
+      "type": "library",
+      "name": "pkijs",
+      "version": "3.4.1"
+    },
+    {
+      "type": "library",
+      "name": "pkijs/node_modules/@noble/hashes",
+      "version": "1.8.0"
+    },
+    {
+      "type": "library",
+      "name": "plist",
+      "version": "3.1.0"
+    },
+    {
+      "type": "library",
+      "name": "postject",
+      "version": "1.0.0-alpha.6"
+    },
+    {
+      "type": "library",
+      "name": "postject/node_modules/commander",
+      "version": "9.5.0"
+    },
+    {
+      "type": "library",
+      "name": "proc-log",
+      "version": "6.1.0"
+    },
+    {
+      "type": "library",
+      "name": "process-nextick-args",
+      "version": "2.0.1"
+    },
+    {
+      "type": "library",
+      "name": "progress",
+      "version": "2.0.3"
+    },
+    {
+      "type": "library",
+      "name": "promise-retry",
+      "version": "2.0.1"
+    },
+    {
+      "type": "library",
+      "name": "proper-lockfile",
+      "version": "4.1.2"
+    },
+    {
+      "type": "library",
+      "name": "pump",
+      "version": "3.0.4"
+    },
+    {
+      "type": "library",
+      "name": "pvtsutils",
+      "version": "1.3.6"
+    },
+    {
+      "type": "library",
+      "name": "pvutils",
+      "version": "1.2.0"
+    },
+    {
+      "type": "library",
+      "name": "quick-lru",
+      "version": "5.1.1"
+    },
+    {
+      "type": "library",
+      "name": "read-binary-file-arch",
+      "version": "1.0.6"
+    },
+    {
+      "type": "library",
+      "name": "readable-stream",
+      "version": "2.3.8"
+    },
+    {
+      "type": "library",
+      "name": "require-directory",
+      "version": "2.1.1"
+    },
+    {
+      "type": "library",
+      "name": "require-from-string",
+      "version": "2.0.2"
+    },
+    {
+      "type": "library",
+      "name": "resedit",
+      "version": "1.7.2"
+    },
+    {
+      "type": "library",
+      "name": "resolve-alpn",
+      "version": "1.2.1"
+    },
+    {
+      "type": "library",
+      "name": "responselike",
+      "version": "2.0.1"
+    },
+    {
+      "type": "library",
+      "name": "retry",
+      "version": "0.12.0"
+    },
+    {
+      "type": "library",
+      "name": "rimraf",
+      "version": "2.6.3"
+    },
+    {
+      "type": "library",
+      "name": "roarr",
+      "version": "2.15.4"
+    },
+    {
+      "type": "library",
+      "name": "safe-buffer",
+      "version": "5.1.2"
+    },
+    {
+      "type": "library",
+      "name": "sanitize-filename",
+      "version": "1.6.4"
+    },
+    {
+      "type": "library",
+      "name": "sax",
+      "version": "1.6.1"
+    },
+    {
+      "type": "library",
+      "name": "semver",
+      "version": "7.8.5"
+    },
+    {
+      "type": "library",
+      "name": "semver-compare",
+      "version": "1.0.0"
+    },
+    {
+      "type": "library",
+      "name": "serialize-error",
+      "version": "7.0.1"
+    },
+    {
+      "type": "library",
+      "name": "shebang-command",
+      "version": "2.0.0"
+    },
+    {
+      "type": "library",
+      "name": "shebang-regex",
+      "version": "3.0.0"
+    },
+    {
+      "type": "library",
+      "name": "signal-exit",
+      "version": "3.0.7"
+    },
+    {
+      "type": "library",
+      "name": "simple-update-notifier",
+      "version": "2.0.0"
+    },
+    {
+      "type": "library",
+      "name": "source-map",
+      "version": "0.6.1"
+    },
+    {
+      "type": "library",
+      "name": "source-map-support",
+      "version": "0.5.21"
+    },
+    {
+      "type": "library",
+      "name": "sprintf-js",
+      "version": "1.1.3"
+    },
+    {
+      "type": "library",
+      "name": "stat-mode",
+      "version": "1.0.0"
+    },
+    {
+      "type": "library",
+      "name": "string_decoder",
+      "version": "1.1.1"
+    },
+    {
+      "type": "library",
+      "name": "string-width",
+      "version": "4.2.3"
+    },
+    {
+      "type": "library",
+      "name": "strip-ansi",
+      "version": "6.0.1"
+    },
+    {
+      "type": "library",
+      "name": "sumchecker",
+      "version": "3.0.1"
+    },
+    {
+      "type": "library",
+      "name": "supports-color",
+      "version": "7.2.0"
+    },
+    {
+      "type": "library",
+      "name": "tar",
+      "version": "7.5.22"
+    },
+    {
+      "type": "library",
+      "name": "tar/node_modules/yallist",
+      "version": "5.0.0"
+    },
+    {
+      "type": "library",
+      "name": "temp",
+      "version": "0.9.4"
+    },
+    {
+      "type": "library",
+      "name": "temp-file",
+      "version": "3.4.0"
+    },
+    {
+      "type": "library",
+      "name": "tiny-async-pool",
+      "version": "1.3.0"
+    },
+    {
+      "type": "library",
+      "name": "tiny-async-pool/node_modules/semver",
+      "version": "5.7.2"
+    },
+    {
+      "type": "library",
+      "name": "tinyglobby",
+      "version": "0.2.17"
+    },
+    {
+      "type": "library",
+      "name": "tmp",
+      "version": "0.2.7"
+    },
+    {
+      "type": "library",
+      "name": "tmp-promise",
+      "version": "3.0.3"
+    },
+    {
+      "type": "library",
+      "name": "truncate-utf8-bytes",
+      "version": "1.0.2"
+    },
+    {
+      "type": "library",
+      "name": "tslib",
+      "version": "2.8.1"
+    },
+    {
+      "type": "library",
+      "name": "type-fest",
+      "version": "0.13.1"
+    },
+    {
+      "type": "library",
+      "name": "undici",
+      "version": "7.30.0"
+    },
+    {
+      "type": "library",
+      "name": "undici-types",
+      "version": "7.24.6"
+    },
+    {
+      "type": "library",
+      "name": "universalify",
+      "version": "2.0.1"
+    },
+    {
+      "type": "library",
+      "name": "unzipper",
+      "version": "0.12.5"
+    },
+    {
+      "type": "library",
+      "name": "unzipper/node_modules/fs-extra",
+      "version": "11.3.1"
+    },
+    {
+      "type": "library",
+      "name": "utf8-byte-length",
+      "version": "1.0.5"
+    },
+    {
+      "type": "library",
+      "name": "util-deprecate",
+      "version": "1.0.2"
+    },
+    {
+      "type": "library",
+      "name": "webcrypto-core",
+      "version": "1.9.2"
+    },
+    {
+      "type": "library",
+      "name": "which",
+      "version": "5.0.0"
+    },
+    {
+      "type": "library",
+      "name": "wrap-ansi",
+      "version": "7.0.0"
+    },
+    {
+      "type": "library",
+      "name": "wrappy",
+      "version": "1.0.2"
+    },
+    {
+      "type": "library",
+      "name": "xmlbuilder",
+      "version": "15.1.1"
+    },
+    {
+      "type": "library",
+      "name": "y18n",
+      "version": "5.0.8"
+    },
+    {
+      "type": "library",
+      "name": "yallist",
+      "version": "4.0.0"
+    },
+    {
+      "type": "library",
+      "name": "yargs",
+      "version": "17.7.3"
+    },
+    {
+      "type": "library",
+      "name": "yargs-parser",
+      "version": "21.1.1"
+    },
+    {
+      "type": "library",
+      "name": "yocto-queue",
+      "version": "0.1.0"
+    }
+  ]
+}

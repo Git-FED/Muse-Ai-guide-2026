@@ -1,0 +1,8 @@
+{
+  "startUrl": "local",
+  "allowedHosts": [],
+  "windowTitle": "FedPromptly Muse Audit",
+  "theme": "dark",
+  "closeToTray": false,
+  "openExternalProtocols": ["http:", "https:", "mailto:"]
+}

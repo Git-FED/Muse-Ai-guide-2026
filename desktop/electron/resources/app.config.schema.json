@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fedpromptly.example/schemas/electron-app-config.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["startUrl", "allowedHosts", "windowTitle", "theme", "closeToTray", "openExternalProtocols"],
+  "properties": {
+    "startUrl": { "type": "string", "description": "Use local or an HTTPS URL whose hostname is listed in allowedHosts." },
+    "allowedHosts": { "type": "array", "items": { "type": "string", "pattern": "^[A-Za-z0-9.-]+$" }, "uniqueItems": true },
+    "windowTitle": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "theme": { "type": "string", "enum": ["dark", "light", "system"] },
+    "closeToTray": { "type": "boolean" },
+    "openExternalProtocols": { "type": "array", "items": { "enum": ["http:", "https:", "mailto:"] }, "uniqueItems": true }
+  }
+}

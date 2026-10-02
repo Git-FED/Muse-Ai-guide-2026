@@ -1,0 +1,32 @@
+appId: com.fedpromptly.museaudit.electron
+productName: FedPromptly Muse Audit
+asar: true
+directories:
+  output: dist
+  buildResources: build
+files:
+  - main.cjs
+  - site/**/*
+  - build/tray-icon.png
+extraResources:
+  - from: resources/app.config.json
+    to: app.config.json
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: build/icon.ico
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  installerIcon: build/installerIcon.ico
+  uninstallerIcon: build/uninstallerIcon.ico
+  installerHeaderIcon: build/installerHeaderIcon.ico
+  license: build/license.txt
+  include: build/installer.nsh
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: FedPromptly Muse Audit
+publish: null
