@@ -15,6 +15,7 @@ FedPromptly Muse Audit is an offline-first usage-audit companion for Muse-by-Met
 FedPromptly Muse Audit is an offline-first usage-audit companion for Muse-by-Meta workflows. It provides a responsive static guide plus a device-local ledger for recording evidence, sent/received bytes, value status, and outcomes. It does **not** claim private Muse telemetry or provide a Meta account integration.
 
 The static pages work with `file://` as well as a local web server. Ledger records stay in the browser or WebView's `localStorage` unless a user explicitly exports CSV or JSON.
+
 <img width="651" height="279" alt="Screenshot 2026-10-01 172012" src="https://github.com/user-attachments/assets/fbda619c-7253-4b05-8ffc-eaab5cc901e2" />
 
 ## Run the web version
