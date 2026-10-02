@@ -1,0 +1,40 @@
+name: Dependency Audit
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 4 * * 1'
+  push:
+    paths:
+      - 'desktop/electron/package-lock.json'
+      - 'desktop/tauri/package-lock.json'
+      - 'desktop/tauri/src-tauri/Cargo.lock'
+      - '.github/workflows/dependency-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  npm:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        directory: [desktop/electron, desktop/tauri]
+    defaults:
+      run:
+        working-directory: ${{ matrix.directory }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --ignore-scripts
+      - run: npm audit --audit-level=high
+  cargo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions-rust-lang/audit@v1
+        with:
+          working-directory: desktop/tauri/src-tauri

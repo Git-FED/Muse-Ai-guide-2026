@@ -1,0 +1,139 @@
+name: Build All Targets
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  web:
+    name: Validate web and desktop structure
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate JavaScript
+        run: |
+          node --check site/assets/js/app.js
+          node --check site/assets/js/ledger.js
+      - name: Validate manifest
+        run: python3 -m json.tool site/manifest.webmanifest >/dev/null
+      - name: Validate desktop structure
+        run: node scripts/verify-desktop.mjs
+      - name: Reject automatic third-party loaders
+        run: |
+          if grep -RInE 'paypal|stripe|@import url\(https?://|<script[^>]+src="https?://' site --include='*.html' --include='*.css' --include='*.js'; then
+            echo 'Unexpected automatic third-party resource loader found.' >&2
+            exit 1
+          fi
+      - name: Package web/PWA target
+        run: tar -czf fedpromptly-web-pwa-${{ github.sha }}.tar.gz -C site .
+      - name: Upload web/PWA target
+        uses: actions/upload-artifact@v4
+        with:
+          name: fedpromptly-web-pwa-${{ github.sha }}
+          path: fedpromptly-web-pwa-${{ github.sha }}.tar.gz
+          if-no-files-found: error
+
+  android:
+    name: Build Android debug APK
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: android
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+      - name: Restore Gradle wrapper executable permission
+        run: chmod +x ./gradlew
+      - name: Assemble debug APK
+        run: ./gradlew --no-daemon assembleDebug
+      - name: Capture checksum and source provenance
+        run: bash ./scripts/capture-apk-provenance.sh app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/apk-provenance.json
+      - name: Prepare installable APK artifact
+        run: cp app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/fedpromptly-muse-audit.apk
+      - name: Upload Android APK and provenance
+        uses: actions/upload-artifact@v4
+        with:
+          name: fedpromptly-android-${{ github.sha }}
+          path: |
+            android/app/build/outputs/apk/debug/fedpromptly-muse-audit.apk
+            android/app/build/outputs/apk/debug/app-debug.apk
+            android/app/build/outputs/apk/debug/apk-provenance.json
+            android/app/build/outputs/apk/debug/SHA256SUMS.txt
+          if-no-files-found: error
+
+  electron-windows:
+    name: Build Electron Windows installer
+    runs-on: windows-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: desktop/electron/package-lock.json
+      - name: Install locked Electron dependencies
+        working-directory: desktop/electron
+        run: npm ci
+      - name: Validate Electron package structure
+        working-directory: desktop/electron
+        run: npm run verify
+      - name: Build Windows installer
+        working-directory: desktop/electron
+        run: npm run dist
+      - name: Upload Windows installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: fedpromptly-electron-windows-${{ github.sha }}
+          path: desktop/electron/dist/*
+          if-no-files-found: error
+
+  tauri-macos:
+    name: Build Tauri macOS app
+    runs-on: macos-14
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: desktop/tauri/package-lock.json
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: Install locked Tauri dependencies
+        working-directory: desktop/tauri
+        run: npm ci
+      - name: Validate Tauri package structure
+        working-directory: desktop/tauri
+        run: npm run verify
+      - name: Build macOS app bundle
+        working-directory: desktop/tauri
+        run: npm run build:macos
+      - name: Upload Tauri macOS bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: fedpromptly-tauri-macos-${{ github.sha }}
+          path: desktop/tauri/src-tauri/target/release/bundle/macos/*.app
+          if-no-files-found: error

@@ -1,0 +1,38 @@
+name: Electron Windows Build
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'desktop/electron/**'
+      - 'desktop/icons/**'
+      - 'site/**'
+      - '.github/workflows/build-win.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: desktop/electron
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: desktop/electron/package-lock.json
+      - run: npm ci
+      - run: npm run verify
+      - run: npm run sbom
+      - run: npm run dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fedpromptly-electron-windows-${{ github.sha }}
+          path: |
+            desktop/electron/dist/**
+            desktop/electron/SBOM.json
+          if-no-files-found: error

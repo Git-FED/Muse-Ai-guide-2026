@@ -1,0 +1,59 @@
+name: Release Readiness (unsigned)
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version label for the unsigned validation artifacts'
+        required: true
+        default: '1.0.0'
+
+permissions:
+  contents: read
+
+jobs:
+  electron-windows:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: desktop/electron
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm run verify
+      - run: npm run sbom
+      - run: npm run dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-electron-unsigned-${{ inputs.version }}
+          path: |
+            desktop/electron/dist/**
+            desktop/electron/SBOM.json
+          if-no-files-found: error
+
+  tauri-macos:
+    runs-on: macos-14
+    defaults:
+      run:
+        working-directory: desktop/tauri
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: dtolnay/rust-toolchain@stable
+      - run: npm ci
+      - run: npm run verify
+      - run: npm run build:macos
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-tauri-unsigned-${{ inputs.version }}
+          path: desktop/tauri/src-tauri/target/release/bundle/macos/*.app
+          if-no-files-found: error
+
+# Signing, notarization, publishing, updater manifests, and release attestations are deliberately
+# not performed by this template. Add protected secrets and an owner-reviewed release job only after
+# completing RELEASE-READINESS.md.
