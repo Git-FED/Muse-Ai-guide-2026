@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "updater-example-disabled",
+  "description": "Example only. Do not rename into the active capabilities directory until a signed updater is configured.",
+  "windows": ["main"],
+  "permissions": ["core:default"]
+}

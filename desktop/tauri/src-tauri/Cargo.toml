@@ -1,0 +1,17 @@
+[package]
+name = "fedpromptly-muse-audit-tauri"
+version = "1.0.0"
+description = "FedPromptly Muse Audit macOS desktop shell"
+authors = ["FedPromptly"]
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2.0.0", features = [] }
+
+[dependencies]
+open = "5.3.1"
+tauri = { version = "2.0.0", features = ["tray-icon"] }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
