@@ -1,4 +1,4 @@
-# FedPromptly × Muse by Meta
+# FedPromptly × Muse by Meta (Promo Code: MG47DO https://muse.ai/join)
 
 FedPromptly Muse Audit is an offline-first usage-audit companion for Muse-by-Meta workflows. It provides a responsive static guide plus a device-local ledger for recording evidence, sent/received bytes, value status, and outcomes. It does **not** claim private Muse telemetry or provide a Meta account integration.
 
