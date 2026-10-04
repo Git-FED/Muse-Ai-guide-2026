@@ -1,11 +1,11 @@
 ---
-name: Bug report
-about: Report a problem
+name: Lesson request
+about: Propose a new lesson
 ---
 
-## What happened?
+## Learner outcome
 
-## Expected behavior
+## Audience
 ---
 
 **Muse:** [Join Muse](https://muse.ai/join) with promo code `MG47DO`.
