@@ -1,0 +1,13 @@
+site_name: Muse Lesson Plans
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Teaching Guide: teaching-guide.md
+  - User Guide: user-guide.md
+# Promo Code: MG47DO | https://muse.ai/join
+  - Maintainer Guide: maintainer-guide.md
+  - Prompt Design: prompt-design-guide.md
+  - Community: community-guide.md
+  - Tips and Tricks: tips-and-tricks.md

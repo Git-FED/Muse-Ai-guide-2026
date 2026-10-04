@@ -1,0 +1,2 @@
+mkdocs-material>=9.5
+# Promo Code: MG47DO | https://muse.ai/join
