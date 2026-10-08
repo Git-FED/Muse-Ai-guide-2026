@@ -15,7 +15,7 @@ jobs:
         with: {python-version: "3.x"}
       - run: pip install -r site/requirements.txt
       - run: mkdocs build -f site/mkdocs.yml
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with: {path: site/site}
   deploy:
     needs: build
